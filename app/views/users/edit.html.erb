@@ -1,5 +1,17 @@
 <h1>Edit</h1>
 
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <!-- <p>Html Form</p>
 
 <form action="/users" method="post" accept-charset="UTF-8">
@@ -14,7 +26,7 @@
     <input type="submit" value="Submit">
 </form> -->
 
-<h2>Railsy form</h2>
+<!--<h2>Railsy form</h2>
 
 <%= form_tag(user_path(@user), method: "patch") do %>
   <%= label(:user, :username) %>
@@ -24,9 +36,9 @@
   <%= label(:user, :password) %>
   <%= password_field(:user, :password) %><br><br>
   <%= submit_tag("Submit") %>
-<% end %> 
+<% end %> -->
 
-<!--<h2>Railsy-er form</h2>
+<h2>Railsy-er form</h2>
 
 <%= form_with(model: @user) do |form| %>
   <%= form.label :username, value: 'User name here ->', for: 'user_username' %>
@@ -39,4 +51,4 @@
   <%= form.password_field :password %><br><br>
 
   <%= form.submit %>
-<% end %>-->
+<% end %>
