@@ -28,11 +28,11 @@
 <h2>Railsy-er form</h2>
 
 <%= form_with(model: @user) do |form| %>
-  <%= form.label :username %>
-  <%= form.text_field :username %><br><br>
+  <%= form.label :username, value: 'User name here ->', for: 'user_username' %>
+  <%= form.text_field :username, value: 'Example_handle' %><br><br>
 
   <%= form.label :email %>
-  <%= form.text_field :email %><br><br>
+  <%= form.text_field :email, placeholder: 'name@example.com' %><br><br>
 
   <%= form.label :password %>
   <%= form.password_field :password %><br><br>
