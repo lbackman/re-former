@@ -1,6 +1,6 @@
 <h1>Hi</h1>
 
-<p>Form</p>
+<!-- <p>Html Form</p>
 
 <form action="/users" method="post" accept-charset="UTF-8">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -11,4 +11,16 @@
     <label for="password">Password:</label>
     <input type="password" id="password" name="user[password]"><br><br>
     <input type="submit" value="Submit">
-</form>
+</form> -->
+
+<h2>Railsy form</h2>
+
+<%= form_tag('/users') do %>
+  <%= label_tag(:username) %>
+  <%= text_field_tag(:username) %>
+  <%= label_tag(:email) %>
+  <%= text_field_tag(:email) %>
+  <%= label_tag(:password) %>
+  <%= password_field_tag(:password) %>
+  <%= submit_tag("Submit") %>
+<% end %>
