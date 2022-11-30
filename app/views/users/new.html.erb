@@ -11,16 +11,31 @@
     <label for="password">Password:</label>
     <input type="password" id="password" name="user[password]"><br><br>
     <input type="submit" value="Submit">
-</form> -->
+</form> 
 
 <h2>Railsy form</h2>
 
 <%= form_tag('/users') do %>
   <%= label_tag(:username) %>
-  <%= text_field_tag(:username) %>
+  <%= text_field_tag(:username) %><br><br>
   <%= label_tag(:email) %>
-  <%= text_field_tag(:email) %>
+  <%= text_field_tag(:email) %><br><br>
   <%= label_tag(:password) %>
-  <%= password_field_tag(:password) %>
+  <%= password_field_tag(:password) %><br><br>
   <%= submit_tag("Submit") %>
+<% end %> -->
+
+<h2>Railsy-er form</h2>
+
+<%= form_with(model: @user) do |form| %>
+  <%= form.label :username %>
+  <%= form.text_field :username %><br><br>
+
+  <%= form.label :email %>
+  <%= form.text_field :email %><br><br>
+
+  <%= form.label :password %>
+  <%= form.password_field :password %><br><br>
+
+  <%= form.submit %>
 <% end %>
